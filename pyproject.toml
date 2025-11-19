@@ -1,0 +1,14 @@
+[project]
+name = "kimino"
+authors = [
+{ name = "Ahum Maitra", email = "theahummaitra@gmail.com" }
+]
+version = "1.0.0"
+license = "License.md"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "textual[syntax]>=6.6.0",
+    "textual-dev>=1.8.0",
+]
