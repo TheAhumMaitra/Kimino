@@ -10,6 +10,7 @@ from components.TUI_app import TuiAppLauncher
 from components.BashFile_app import BashAppLauncher
 from components.Web_app import WebAppLauncher
 
+
 class Kimino(App):
     BINDINGS = [("^q", "quit", "Quit the app")]
     CSS_PATH = "./styles/style.tcss"
@@ -20,10 +21,7 @@ class Kimino(App):
         try:
             yield ScrollableContainer(
                 Select.from_values(Options, id="select_mode"),
-
-                ScrollableContainer(
-                    id="add_details"
-                )
+                ScrollableContainer(id="add_details"),
             )
 
             # Label to show selected value
@@ -46,9 +44,11 @@ class Kimino(App):
         elif User_selected_option == "Bash file":
             add.mount(BashAppLauncher())
         else:
-            add.mount(Label("Invalid option or nothing selected, it can be an unexpected error."))
-
-
+            add.mount(
+                Label(
+                    "Invalid option or nothing selected, it can be an unexpected error."
+                )
+            )
 
 
 if __name__ == "__main__":
@@ -58,5 +58,7 @@ if __name__ == "__main__":
     except Exception as UnexpectedError:
         error = UnexpectedError
         with open("Error_log.txt", "a") as Error_Log:
-                Error_Log.write(f"THE APP DIDN'T RUN SUCCESSFULLY \n \n ERROR : \n\n {error}")
-                quit()
+            Error_Log.write(
+                f"THE APP DIDN'T RUN SUCCESSFULLY \n \n ERROR : \n\n {error}"
+            )
+            quit()
