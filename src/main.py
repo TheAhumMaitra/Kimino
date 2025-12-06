@@ -13,7 +13,7 @@
 #     You should have received a copy of the GNU General Public License
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
-
+# Textual
 from textual.app import App, ComposeResult
 from textual.containers import ScrollableContainer, Container
 from textual import on
@@ -27,12 +27,19 @@ from components.BashFile_app import BashAppLauncher
 from components.Web_app import WebAppLauncher
 
 
+# Main app class
 class Kimino(App):
     BINDINGS = [("^q", "quit", "Quit the app")]
-    CSS_PATH = "./styles/style.tcss"
+    CSS_PATH = "./style.tcss"
 
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)
+
+        yield Label(
+            "[b yellow] Welcome to Kimino, This app helps you to create desktop entry easily![/b yellow]",
+            id="weltext",
+        )
+
         Options = ["TUI", "Web App", "Bash file"]
         try:
             yield ScrollableContainer(
@@ -53,28 +60,15 @@ class Kimino(App):
         User_selected_option = event.value
         add = self.query_one("#add_details")
 
-        if User_selected_option == "TUI":
-            add.mount(TuiAppLauncher())
-        elif User_selected_option == "Web App":
-            add.mount(WebAppLauncher())
-        elif User_selected_option == "Bash file":
-            add.mount(BashAppLauncher())
-        else:
-            add.mount(
-                Label(
-                    "Invalid option or nothing selected, it can be an unexpected error."
-                )
-            )
+        match User_selected_option:
+            case "TUI":
+                self.push_screen(TuiAppLauncher())
+            case "Bash file":
+                self.push_screen(BashAppLauncher())
+            case "Web App":
+                self.push_screen(WebAppLauncher())
 
 
 if __name__ == "__main__":
-    try:
-        Kimino().run()
-
-    except Exception as UnexpectedError:
-        error = UnexpectedError
-        with open("Error_log.txt", "a") as Error_Log:
-            Error_Log.write(
-                f"THE APP DIDN'T RUN SUCCESSFULLY \n \n ERROR : \n\n {error}"
-            )
-            quit()
+    app: Kimino = Kimino()
+    Kimino().run()
