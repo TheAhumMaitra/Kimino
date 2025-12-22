@@ -4,6 +4,9 @@ Kimino is a TUI app. Which helps to create, custom app desktop entry in Linux.
 
 # Preview
 
+https://github.com/user-attachments/assets/997f0006-0149-4d3d-8cb4-1e3adf1290a6
+
+
 # Features
 
 **1. Supports online web app (suppose : Youtube web app)**
