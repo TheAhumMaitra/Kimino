@@ -22,9 +22,9 @@ from textual import on
 from textual.widgets import Footer, Header, Label, Select
 
 # Import all components
-from components.TUI_app import TuiAppLauncher
-from components.BashFile_app import BashAppLauncher
-from components.Web_app import WebAppLauncher
+from Kimino.components.TUI_app import TuiAppLauncher
+from Kimino.components.BashFile_app import BashAppLauncher
+from Kimino.components.Web_app import WebAppLauncher
 
 
 # Main app class
@@ -67,6 +67,10 @@ class Kimino(App):
                 self.push_screen(BashAppLauncher())
             case "Web App":
                 self.push_screen(WebAppLauncher())
+
+def main():
+    app: Kimino = Kimino()
+    Kimino().run()
 
 
 if __name__ == "__main__":
