@@ -1,14 +1,19 @@
 [project]
 name = "kimino"
-authors = [
-{ name = "Ahum Maitra", email = "theahummaitra@gmail.com" }
-]
+authors = [{ name = "Ahum Maitra", email = "theahummaitra@gmail.com" }]
 version = "1.0.0"
-license = "License.md"
+license = "GPL-3.0-or-later"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = [
-    "textual[syntax]>=6.6.0",
-    "textual-dev>=1.8.0",
-]
+dependencies = ["textual[syntax]>=6.6.0", "textual-dev>=1.8.0"]
+
+[project.scripts]
+Kimino = "Kimino.main:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.package-data]
+Kimino = ["*.tcss"]
+
