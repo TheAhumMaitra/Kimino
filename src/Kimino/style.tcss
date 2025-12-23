@@ -43,7 +43,7 @@ text-align: center;
 
 #logo{
   width: 100%;
-  color: rgb(255, 251, 0);
+  color: rgb(0, 255, 166);
   height: 40%;
   align: center middle;
   margin: 2;
