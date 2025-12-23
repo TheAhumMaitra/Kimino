@@ -36,7 +36,16 @@ margin: 3;
 }
 
 #weltext{
-margin:3;
+margin: 3;
 width: 100%;
 text-align: center;
+}
+
+#logo{
+  width: 100%;
+  color: rgb(255, 251, 0);
+  height: 40%;
+  align: center middle;
+  margin: 2;
+  text-align: center;
 }
