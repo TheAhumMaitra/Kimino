@@ -40,10 +40,17 @@ from Kimino.components.Web_app import (
 # import About screen
 from Kimino.pages.About import AboutScreen
 
+# import full license screen
+from Kimino.pages.full_license import FullLicense
+
 
 # Main app class
 class Kimino(App):
-    BINDINGS = [("^q", "quit", "Quit the app"), ("a", "about_screen", "About Kimino")]
+    BINDINGS = [
+        ("^q", "quit", "Quit the app"),
+        ("a", "about_screen", "About Kimino"),
+        ("w", "show_full_license", "Show License"),
+    ]
     CSS_PATH = "./style.tcss"
 
     def compose(self) -> ComposeResult:
@@ -73,6 +80,9 @@ class Kimino(App):
 
     def action_about_screen(self) -> None:
         self.push_screen(AboutScreen())
+
+    def action_show_full_license(self) -> None:
+        self.push_screen(FullLicense())
 
     @on(Select.Changed)
     def show(self, event: Select.Changed):
