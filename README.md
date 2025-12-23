@@ -23,7 +23,29 @@ https://github.com/user-attachments/assets/b8fdb359-8343-48c2-a692-7b1b1933d503
 uv tool install -U git+https://github.com/TheAhumMaitra/Kimino.git
 ```
 
+_or_
+
+```
+uv tool install -U Kimino
+```
+
 **_Done , now launch with just ``Kimino` command_**
+
+**Installation using `pip`**
+
+```
+pip install Kimino
+```
+**_Done , now launch with just ``Kimino` command_**
+
+**Installation using `pipx`:**
+
+```
+pipx install Kimino
+```
+
+**_Done , now launch with just ``Kimino` command_**
+
 
 **Manual installation:**
 
