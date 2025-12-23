@@ -14,21 +14,41 @@
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
 # Textual necessary sub-packages
-from textual.app import App, ComposeResult
-from textual.containers import ScrollableContainer, Container
+import argparse
+
+# for CLI interface
+import subprocess
+
+# for cli
+from rich import print
 from textual import on
+from textual.app import App, ComposeResult
+from textual.containers import Container, ScrollableContainer
 
 # Import All Textual Widgets
 from textual.widgets import Footer, Header, Label, Select, Static
 
+# import current Kimino version
+from Kimino import __version__
+from Kimino.components.ascii_art import logo  # import Kimino ascii-art logo
+from Kimino.components.BashFile_app import (
+    BashAppLauncher,  # for creating bash file app entry
+)
+
+# import short license notice
+from Kimino.components.license_text import license_short_text
+
 # Import all components
-from Kimino.components.TUI_app import TuiAppLauncher #for creating TUI App desktop entry
-from Kimino.components.BashFile_app import BashAppLauncher #for creating bash file app entry
-from Kimino.components.Web_app import WebAppLauncher #for creating web app desktop entry
-from Kimino.components.ascii_art import logo #import Kimino ascii-art logo
+from Kimino.components.TUI_app import (
+    TuiAppLauncher,  # for creating TUI App desktop entry
+)
+from Kimino.components.Web_app import (
+    WebAppLauncher,  # for creating web app desktop entry
+)
 
 # import About screen
 from Kimino.pages.About import AboutScreen
+
 
 # Main app class
 class Kimino(App):
@@ -38,7 +58,7 @@ class Kimino(App):
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)
 
-        yield Label(f"{logo}", id="logo") #render main ascii logo
+        yield Label(f"{logo}", id="logo")  # render main ascii logo
 
         yield Label(
             "[b yellow] Welcome to Kimino, This app helps you to create desktop entry easily![/b yellow]",
@@ -62,7 +82,7 @@ class Kimino(App):
 
     def action_about_screen(self) -> None:
         self.push_screen(AboutScreen())
-        
+
     @on(Select.Changed)
     def show(self, event: Select.Changed):
         User_selected_option = event.value
@@ -76,11 +96,36 @@ class Kimino(App):
             case "Web App":
                 self.push_screen(WebAppLauncher())
 
+
+# main function for CLI interface
 def main():
-    app: Kimino = Kimino()
-    Kimino().run()
+    parser = argparse.ArgumentParser(
+        prog="Kimino",
+        description="Easy to use desktop app entry creator",
+        epilog="Thanks for using Kimino!",
+    )
 
+    parser.add_argument("--version", action="store_true")
+    parser.add_argument("--about", action="store_true")
 
-if __name__ == "__main__":
+    args = parser.parse_args()
+
+    if args.version:
+        subprocess.run(["clear"])
+
+        print(f"v{__version__}")
+        return
+
+    if args.about:
+        subprocess.run(["clear"])
+        print(f"{logo}\n\n")
+
+        print("[purple bold]Created by Ahum Maitra[/]")
+
+        print(f"[yellow]{license_short_text}[/]")
+
+        return
+
+    # run app
     app: Kimino = Kimino()
-    Kimino().run()
+    app.run()
