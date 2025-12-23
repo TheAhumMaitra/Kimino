@@ -21,7 +21,29 @@ Kimino is a TUI app. Which helps to create, custom app desktop entry in Linux.
 uv tool install -U git+https://github.com/TheAhumMaitra/Kimino.git
 ```
 
+_or_
+
+```
+uv tool install -U Kimino
+```
+
 **_Done , now launch with just ``Kimino` command_**
+
+**Installation using `pip`**
+
+```
+pip install Kimino
+```
+**_Done , now launch with just ``Kimino` command_**
+
+**Installation using `pipx`:**
+
+```
+pipx install Kimino
+```
+
+**_Done , now launch with just ``Kimino` command_**
+
 
 **Manual installation:**
 
