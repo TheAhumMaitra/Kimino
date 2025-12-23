@@ -17,7 +17,7 @@ https://github.com/user-attachments/assets/b8fdb359-8343-48c2-a692-7b1b1933d503
 
 # Installation (Windows, Linux, Mac OS)
 
-**Installation or update with `uv`:**
+**Installation or update using `uv`:**
 
 ```
 uv tool install -U git+https://github.com/TheAhumMaitra/Kimino.git
