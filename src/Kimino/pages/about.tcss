@@ -1,0 +1,25 @@
+#about_container{
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 80%;
+    background: $panel;
+    border: solid $primary;
+}
+
+#about_logo{
+   color: blueviolet;
+   margin: 0 0 2 0;
+}
+
+#description{
+    margin: 0 0 2 0;
+}
+
+#creator{
+    margin: 0 0 1 0;
+}
+
+#license_short_text{
+    margin: 2 0 0 0;
+}

@@ -27,9 +27,12 @@ from Kimino.components.BashFile_app import BashAppLauncher #for creating bash fi
 from Kimino.components.Web_app import WebAppLauncher #for creating web app desktop entry
 from Kimino.components.ascii_art import logo #import Kimino ascii-art logo
 
+# import About screen
+from Kimino.pages.About import AboutScreen
+
 # Main app class
 class Kimino(App):
-    BINDINGS = [("^q", "quit", "Quit the app")]
+    BINDINGS = [("^q", "quit", "Quit the app"), ("a", "about_screen", "About Kimino")]
     CSS_PATH = "./style.tcss"
 
     def compose(self) -> ComposeResult:
@@ -57,6 +60,9 @@ class Kimino(App):
             quit()
         yield Footer()
 
+    def action_about_screen(self) -> None:
+        self.push_screen(AboutScreen())
+        
     @on(Select.Changed)
     def show(self, event: Select.Changed):
         User_selected_option = event.value

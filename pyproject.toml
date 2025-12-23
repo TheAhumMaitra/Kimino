@@ -6,7 +6,10 @@ license = "GPL-3.0-or-later"
 description = "Easy-to-use Linux desktop app entry creator TUI app."
 readme = "README.md"
 requires-python = ">=3.14"
-dependencies = ["textual[syntax]>=6.6.0", "textual-dev>=1.8.0"]
+dependencies = [
+    "textual[syntax]>=6.6.0",
+    "textual-dev>=1.8.0",
+]
 
 [project.scripts]
 Kimino = "Kimino.main:main"
@@ -15,5 +18,5 @@ Kimino = "Kimino.main:main"
 include-package-data = true
 
 [tool.setuptools.package-data]
-Kimino = ["*.tcss"]
+Kimino = ["**/*.tcss"]
 
