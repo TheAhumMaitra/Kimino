@@ -19,9 +19,12 @@ from Kimino.components.ascii_art import logo
 from Kimino.components.license_text import license_short_text
 
 
+# main class
 class AboutScreen(ModalScreen):
     CSS_PATH = "./about.tcss"
-    BINDINGS = [("escape", "escape_screen", "Escape About Screen")]
+    BINDINGS = [
+        ("escape", "escape_screen", "Escape About Screen"),
+    ]
 
     def compose(self) -> ComposeResult:
         with ScrollableContainer(id="about_container"):
