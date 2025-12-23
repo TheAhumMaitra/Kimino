@@ -13,19 +13,19 @@
 #     You should have received a copy of the GNU General Public License
 #     along with this program.  If not, see <https://www.gnu.org/licenses/>
 
-# Textual
+# Textual necessary sub-packages
 from textual.app import App, ComposeResult
 from textual.containers import ScrollableContainer, Container
 from textual import on
 
 # Import All Textual Widgets
-from textual.widgets import Footer, Header, Label, Select
+from textual.widgets import Footer, Header, Label, Select, Static
 
 # Import all components
-from Kimino.components.TUI_app import TuiAppLauncher
-from Kimino.components.BashFile_app import BashAppLauncher
-from Kimino.components.Web_app import WebAppLauncher
-
+from Kimino.components.TUI_app import TuiAppLauncher #for creating TUI App desktop entry
+from Kimino.components.BashFile_app import BashAppLauncher #for creating bash file app entry
+from Kimino.components.Web_app import WebAppLauncher #for creating web app desktop entry
+from Kimino.components.ascii_art import logo #import Kimino ascii-art logo
 
 # Main app class
 class Kimino(App):
@@ -34,6 +34,8 @@ class Kimino(App):
 
     def compose(self) -> ComposeResult:
         yield Header(show_clock=True)
+
+        yield Label(f"{logo}", id="logo") #render main ascii logo
 
         yield Label(
             "[b yellow] Welcome to Kimino, This app helps you to create desktop entry easily![/b yellow]",
