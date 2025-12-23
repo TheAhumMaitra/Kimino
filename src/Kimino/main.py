@@ -1,17 +1,6 @@
-#   Copyright (C) 2025  Ahum Maitra
-
-#     This program is free software: you can redistribute it and/or modify
-#     it under the terms of the GNU General Public License as published by
-#     the Free Software Foundation, either version 3 of the License, or
-#     (at your option) any later version.
-
-#     This program is distributed in the hope that it will be useful,
-#     but WITHOUT ANY WARRANTY; without even the implied warranty of
-#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#     GNU General Public License for more details.
-
-#     You should have received a copy of the GNU General Public License
-#     along with this program.  If not, see <https://www.gnu.org/licenses/>
+# SPDX-FileCopyrightText: 2025-present Ahum Maitra theahummaitra@gmail.com
+#
+# SPDX-License-Identifier: 	GPL-3.0-or-later
 
 # Textual necessary sub-packages
 import argparse
@@ -21,12 +10,14 @@ import subprocess
 
 # for cli
 from rich import print
+
+# import all textual things
 from textual import on
 from textual.app import App, ComposeResult
-from textual.containers import Container, ScrollableContainer
+from textual.containers import ScrollableContainer
 
 # Import All Textual Widgets
-from textual.widgets import Footer, Header, Label, Select, Static
+from textual.widgets import Footer, Header, Label, Select
 
 # import current Kimino version
 from Kimino import __version__

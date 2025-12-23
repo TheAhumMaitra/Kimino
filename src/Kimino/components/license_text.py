@@ -1,6 +1,10 @@
+# SPDX-FileCopyrightText: 2025-present Ahum Maitra theahummaitra@gmail.com
+#
+# SPDX-License-Identifier: 	GPL-3.0-or-later
+
 from datetime import date
 
-license_short_text = f'''
+license_short_text = f"""
     [b orange]
 Copyright (C) {date.today().year}  Ahum Maitra
 
@@ -18,4 +22,4 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     [/b orange]
-'''
+"""
