@@ -27,14 +27,14 @@ _or_
 uv tool install -U Kimino
 ```
 
-**_Done , now launch with just ``Kimino` command_**
+**_Done , now launch with just `Kimino` command_**
 
 **Installation using `pip`**
 
 ```
 pip install Kimino
 ```
-**_Done , now launch with just ``Kimino` command_**
+**_Done , now launch with just `Kimino` command_**
 
 **Installation using `pipx`:**
 
@@ -42,7 +42,7 @@ pip install Kimino
 pipx install Kimino
 ```
 
-**_Done , now launch with just ``Kimino` command_**
+**_Done , now launch with just `Kimino` command_**
 
 
 **Manual installation:**
