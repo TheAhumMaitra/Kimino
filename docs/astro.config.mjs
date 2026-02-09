@@ -15,6 +15,7 @@ export default defineConfig({
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Introduction', slug: 'guides/introduction' },
 						{ label: 'Installation', slug: 'guides/installation' },
+						{ label: 'Create GUI or TUI app entry', slug: 'guides/tui'}
 					],
 				}
 			],
