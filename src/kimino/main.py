@@ -20,28 +20,28 @@ from textual.containers import ScrollableContainer
 from textual.widgets import Footer, Header, Label, Select
 
 # import current Kimino version
-from Kimino import __version__
-from Kimino.components.ascii_art import logo  # import Kimino ascii-art logo
-from Kimino.components.BashFile_app import (
+from kimino import __version__
+from kimino.components.ascii_art import logo  # import Kimino ascii-art logo
+from kimino.components.BashFile_app import (
     BashAppLauncher,  # for creating bash file app entry
 )
 
 # import short license notice
-from Kimino.components.license_text import license_short_text
+from kimino.components.license_text import license_short_text
 
 # Import all components
-from Kimino.components.TUI_app import (
+from kimino.components.TUI_app import (
     TuiAppLauncher,  # for creating TUI App desktop entry
 )
-from Kimino.components.Web_app import (
+from kimino.components.Web_app import (
     WebAppLauncher,  # for creating web app desktop entry
 )
 
 # import About screen
-from Kimino.pages.About import AboutScreen
+from kimino.pages.About import AboutScreen
 
 # import full license screen
-from Kimino.pages.full_license import FullLicense
+from kimino.pages.full_license import FullLicense
 
 
 # Main app class

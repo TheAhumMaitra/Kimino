@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2025-present Ahum Maitra theahummaitra@gmail.com
+#
+# SPDX-License-Identifier: 	GPL-3.0-or-later
+
 [project]
 name = "kimino"
 authors = [{ name = "Ahum Maitra", email = "theahummaitra@gmail.com" }]
@@ -5,18 +9,34 @@ version = "1.0.0"
 license = "GPL-3.0-or-later"
 description = "Easy-to-use Linux desktop app entry creator TUI app."
 readme = "README.md"
-requires-python = ">=3.14"
+requires-python = ">=3.10,<3.15"
 dependencies = [
     "textual[syntax]>=6.6.0",
     "textual-dev>=1.8.0",
 ]
+keywords = ["Linux", "Linux tools", "Textual app", "Linux app"]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+
+
+[project.urls]
+Homepage = "https://itomori-website.vercel.app/"
+Documentation = "https://itomori-documentation.vercel.app/"
+Repository = "https://github.com/TheAhumMaitra/Itomori"
 
 [project.scripts]
-Kimino = "Kimino.main:main"
+Kimino = "kimino.main:main"
 
 [tool.setuptools]
 include-package-data = true
 
 [tool.setuptools.package-data]
-Kimino = ["**/*.tcss"]
-
+kimino = ["**/*.tcss"]

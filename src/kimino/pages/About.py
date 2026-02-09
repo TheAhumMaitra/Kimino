@@ -10,13 +10,13 @@ from textual.screen import ModalScreen
 from textual.widgets import Footer, Label
 
 # import Kimino's current version
-from Kimino import __version__
+from kimino import __version__
 
 # import ascii logo
-from Kimino.components.ascii_art import logo
+from kimino.components.ascii_art import logo
 
 # import short license text
-from Kimino.components.license_text import license_short_text
+from kimino.components.license_text import license_short_text
 
 
 # main class

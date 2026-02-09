@@ -3,7 +3,7 @@ from textual.containers import ScrollableContainer
 from textual.screen import ModalScreen
 from textual.widgets import Footer, Label
 
-from Kimino.components.license_text import full_license_text
+from kimino.components.license_text import full_license_text
 
 
 class FullLicense(ModalScreen):
